@@ -35,6 +35,7 @@ app.get('/api/:rapperName', (request, response) => {
 
 })
 
-app.listen(PORT, () => {
+// use the port that heroku is trying to make us use, but if it doesnt exist, use the port defined (which is 8000)
+app.listen(process.env.PORT || PORT, () => {
     console.log(`Server is running on port ${PORT}`)
 })
